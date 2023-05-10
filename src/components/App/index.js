@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { ThemeProvider } from '../../context/ThemeContext';
 import Header from "../Header";
 import Post from "../Post";
-import styles from './App.scss';
+import { Title } from "./styles";
 
 
 function App(){
@@ -23,6 +23,7 @@ function App(){
         subtitle: `Sub#0${posts.length + 1}`, 
         likes: 50, 
         read: false,
+        removed: false,
       }
     ])
 
@@ -41,10 +42,10 @@ function App(){
   return (
     <ThemeProvider>
       <Header>
-        <h2 className={styles.title}>
+        <Title as="h2">
           Posts da semana
           <button onClick={handleRefresh}>Atualizar</button>
-        </h2>
+        </Title>
       </Header>
       <hr />
       {posts.map((post) => (
