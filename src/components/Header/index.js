@@ -1,10 +1,9 @@
 import PropTypes from "prop-types";
 import React, { useContext } from "react";
-import Button from "./Button";
-import styles from './Header.css';
-import { ThemeContext } from "./ThemeContext";
+import { ThemeContext } from "../../context/ThemeContext";
+import Button from "../Button";
+import styles from './Header.scss';
 
-console.log(styles)
 
 function Header(props){
   const {onToggleTheme} = useContext(ThemeContext);
